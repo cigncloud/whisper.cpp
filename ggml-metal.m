@@ -178,7 +178,12 @@ struct ggml_metal_context * ggml_metal_init(int n_cb) {
 
         //NSString * path = [[NSBundle mainBundle] pathForResource:@"../../examples/metal/metal" ofType:@"metal"];
         NSBundle * bundle = [NSBundle bundleForClass:[GGMLMetalClass class]];
-        NSString * path   = [bundle pathForResource:@"ggml-metal" ofType:@"metal"];
+        //NSString * path   = [bundle pathForResource:@"ggml-metal" ofType:@"metal"];
+
+        NSString *currentWorkingDirectory = [[NSFileManager defaultManager] currentDirectoryPath];
+        NSString *fileName = @"../../ggml-metal.metal";
+        NSString *path = [currentWorkingDirectory stringByAppendingPathComponent:fileName];
+
         metal_printf("%s: loading '%s'\n", __func__, [path UTF8String]);
 
         NSString * src  = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
