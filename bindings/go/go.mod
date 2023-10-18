@@ -1,4 +1,4 @@
-module github.com/cigncloud/whisper.cpp/bindings/go
+module github.com/ggerganov/whisper.cpp/bindings/go
 
 go 1.19
 

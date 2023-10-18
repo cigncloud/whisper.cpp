@@ -6,7 +6,7 @@ import (
 
 	assert "github.com/stretchr/testify/assert"
 
-	whisper "github.com/cigncloud/whisper.cpp/bindings/go/pkg/whisper"
+	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
 )
 
 const (
