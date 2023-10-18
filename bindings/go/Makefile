@@ -9,6 +9,9 @@ all: clean whisper examples
 whisper: mkdir
 	@echo Build whisper
 	@${MAKE} -C ../.. libwhisper.a
+	cp ../../ggml-metal.o  lm.o
+	cp ../../libwhisper.a libwhisper.a
+
 
 test: model-small whisper modtidy
 	@C_INCLUDE_PATH=${INCLUDE_PATH} LIBRARY_PATH=${LIBRARY_PATH} go test -v .
