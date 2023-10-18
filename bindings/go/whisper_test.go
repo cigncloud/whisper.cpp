@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
 	wav "github.com/go-audio/wav"
 	assert "github.com/stretchr/testify/assert"
+
+	whisper "github.com/cigncloud/whisper.cpp/bindings/go"
 )
 
 const (

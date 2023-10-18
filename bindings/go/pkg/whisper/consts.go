@@ -3,8 +3,7 @@ package whisper
 import (
 	"errors"
 
-	// Bindings
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
+	whisper "github.com/cigncloud/whisper.cpp/bindings/go"
 )
 
 ///////////////////////////////////////////////////////////////////////////////
