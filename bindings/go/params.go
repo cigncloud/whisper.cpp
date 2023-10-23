@@ -123,6 +123,14 @@ func (p *Params) SetAudioCtx(n int) {
 	p.audio_ctx = C.int(n)
 }
 
+func (p *Params) SuppressNonSpeechTokens(v bool) {
+	p.suppress_non_speech_tokens = toBool(v)
+}
+
+func (p *Params) SuppressBlank(v bool) {
+	p.suppress_blank = toBool(v)
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // PRIVATE METHODS
 

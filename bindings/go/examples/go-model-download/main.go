@@ -22,10 +22,19 @@ const (
 	bufSize = 1024 * 64                                                   // Size of the buffer used for downloading the model
 )
 
-var (
-	// The models which will be downloaded, if no model is specified as an argument
-	modelNames = []string{"ggml-tiny.en", "ggml-tiny", "ggml-base.en", "ggml-base", "ggml-small.en", "ggml-small", "ggml-medium.en", "ggml-medium", "ggml-large-v1", "ggml-large"}
-)
+// The models which will be downloaded, if no model is specified as an argument
+var modelNames = []string{
+	"ggml-tiny.en",
+	"ggml-tiny",
+	"ggml-base.en",
+	"ggml-base",
+	"ggml-small.en",
+	"ggml-small",
+	"ggml-medium.en",
+	"ggml-medium",
+	"ggml-large-v1",
+	"ggml-large",
+}
 
 var (
 	// The output folder. When not set, use current working directory.

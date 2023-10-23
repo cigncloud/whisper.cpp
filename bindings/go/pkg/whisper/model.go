@@ -5,7 +5,6 @@ import (
 	"os"
 	"runtime"
 
-	// Bindings
 	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
 )
 
@@ -88,6 +87,7 @@ func (model *model) NewContext() (Context, error) {
 
 	// Create new context
 	params := model.ctx.Whisper_full_default_params(whisper.SAMPLING_GREEDY)
+
 	params.SetTranslate(false)
 	params.SetPrintSpecial(false)
 	params.SetPrintProgress(false)
@@ -96,6 +96,17 @@ func (model *model) NewContext() (Context, error) {
 	params.SetThreads(runtime.NumCPU())
 	params.SetNoContext(true)
 
+	// params.SuppressBlank(true)
+	// params.SuppressNonSpeechTokens(true)
+
 	// Return new context
 	return newContext(model, params)
 }
+
+//func (p *Params) SuppressNonSpeechTokens(v bool) {
+//	p.suppress_non_speech_tokens = toBool(v)
+//}
+//
+//func (p *Params) SuppressBlank(v bool) {
+//	p.suppress_blank = toBool(v)
+//}
