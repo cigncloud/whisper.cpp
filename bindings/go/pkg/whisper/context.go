@@ -7,7 +7,6 @@ import (
 	"strings"
 	"time"
 
-	// Bindings
 	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
 )
 
@@ -128,6 +127,22 @@ func (context *context) SetMaxTokensPerSegment(n uint) {
 // Set audio encoder context
 func (context *context) SetAudioCtx(n uint) {
 	context.params.SetAudioCtx(int(n))
+}
+
+func (context *context) SuppressNonSpeechTokens(v bool) {
+	context.params.SuppressNonSpeechTokens(v)
+}
+
+func (context *context) SuppressBlank(v bool) {
+	context.params.SuppressBlank(v)
+}
+
+func (context *context) MaxContext(n int) {
+	context.params.MaxContext(n)
+}
+
+func (context *context) SetTemperature(t float32) {
+	context.params.SetTemperature(t)
 }
 
 // ResetTimings resets the mode timings. Should be called before processing

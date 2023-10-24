@@ -96,9 +96,6 @@ func (model *model) NewContext() (Context, error) {
 	params.SetThreads(runtime.NumCPU())
 	params.SetNoContext(true)
 
-	// params.SuppressBlank(true)
-	// params.SuppressNonSpeechTokens(true)
-
 	// Return new context
 	return newContext(model, params)
 }
@@ -110,3 +107,5 @@ func (model *model) NewContext() (Context, error) {
 //func (p *Params) SuppressBlank(v bool) {
 //	p.suppress_blank = toBool(v)
 //}
+
+// 	n_max_text_ctx				_Ctype_int

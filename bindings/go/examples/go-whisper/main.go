@@ -6,9 +6,10 @@ import (
 	"os"
 	"path/filepath"
 
-	// Packages
 	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
 )
+
+// go run main.go -model=ggml-small.en
 
 func main() {
 	flags, err := NewFlags(filepath.Base(os.Args[0]), os.Args[1:])

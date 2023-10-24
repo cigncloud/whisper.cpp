@@ -123,12 +123,23 @@ func (p *Params) SetAudioCtx(n int) {
 	p.audio_ctx = C.int(n)
 }
 
+// I added ***************88
 func (p *Params) SuppressNonSpeechTokens(v bool) {
 	p.suppress_non_speech_tokens = toBool(v)
 }
 
 func (p *Params) SuppressBlank(v bool) {
 	p.suppress_blank = toBool(v)
+}
+
+// remove hallucination
+// https://github.com/ggerganov/whisper.cpp/issues/1244
+func (p *Params) MaxContext(n int) {
+	p.n_max_text_ctx = C.int(n)
+}
+
+func (p *Params) SetTemperature(t float32) {
+	p.temperature = C.float(t)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
