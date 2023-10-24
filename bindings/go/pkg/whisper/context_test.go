@@ -4,9 +4,9 @@ import (
 	"os"
 	"testing"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
 	assert "github.com/stretchr/testify/assert"
+
+	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
 )
 
 const (
@@ -51,5 +51,4 @@ func Test_Whisper_001(t *testing.T) {
 	ctx, err := model.NewContext()
 	assert.NoError(err)
 	assert.NotNil(ctx)
-
 }
